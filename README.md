@@ -65,3 +65,43 @@ import { add } from "./utils/math.js";
 }
 ```
 
+#### .env 作成
+
+- .env
+
+`DynamoDB` テーブルを作成して `.env` に記載
+
+```
+DYNAMODB_TABLE_NAME=hono-sample
+```
+
+#### データの読み先の設定（テスト用のJSON？ DynamoDB？）
+
+`src/app.ts` の下記で切り替える
+
+```js
+import {
+  getArticles,
+  getArticle,
+  createArticle,
+// } from './handlers/articles.js'
+} from './handlers/articlesDynamo.js';
+```
+
+## Lambdaへのデプロイ
+
+### コマンド
+
+- `TypeScript` => `JavaScript`
+- `dist/index.cjs` を `zip` する
+
+```
+npm run package:lambda
+```
+
+### ポイント
+
+環境変数をコードに埋め込むために `scripts/build-lambda.mjs` を作成
+
+
+

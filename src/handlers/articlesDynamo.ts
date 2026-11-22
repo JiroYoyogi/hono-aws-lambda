@@ -21,7 +21,11 @@ const client = new DynamoDBClient({
 
 const docClient = DynamoDBDocumentClient.from(client)
 
-const tableName = 'Articles'
+const tableName = process.env.DYNAMODB_TABLE_NAME;
+
+if (!tableName) {
+  throw new Error('DYNAMODB_TABLE_NAME is not defined')
+}
 
 // 記事一覧取得
 export const getArticles = async (): Promise<Article[]> => {

@@ -7,6 +7,7 @@ import {
   getArticle,
   createArticle,
 } from './handlers/articles.js'
+// } from './handlers/articlesDynamo.js';
 
 import { createArticleSchema } from './schemas/article.js'
 
