@@ -76,11 +76,33 @@ import { add } from "./utils/math.js";
 }
 ```
 
+#### DynamoDB 作成
+
+- テーブル名
+
+任意のテーブル名で作成
+
+- LambdaのIAMにアタッチするインラインポリシー
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": "arn:aws:dynamodb:*:アカウントID:table/テーブル名"
+    }
+  ]
+}
+```
+
 #### .env 作成
 
 - .env
 
-`DynamoDB` テーブルを作成して `.env` に記載
+作成したテーブル名を記載
 
 ```
 DYNAMODB_TABLE_NAME=hono-sample
