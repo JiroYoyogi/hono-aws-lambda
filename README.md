@@ -63,9 +63,11 @@ npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb @hono/aws-lambda
 }
 ```
 
-- moduleResolution: "NodeNext"
+なんぞ？
 
 ```js
+// moduleResolution: "NodeNext" を設定すると下記挙動になる
+
 // ❌ エラー: 拡張子がない
 import { add } from "./utils/math";
 
