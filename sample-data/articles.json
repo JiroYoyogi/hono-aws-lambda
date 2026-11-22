@@ -1,0 +1,53 @@
+[
+  {
+    "id": "c44ce127-fcb5-47dd-8d4e-7d777c7cc437",
+    "title": "AWS Lambda入門",
+    "url": "/articles/001",
+    "tags": [
+      "AWS",
+      "Lambda",
+      "Serverless"
+    ],
+    "body": "AWS Lambdaはサーバーを管理せずにコードを実行できるサービスです。API Gatewayと組み合わせることで、手軽にWeb APIを構築できます。",
+    "updatedAt": "2026-11-20T10:00:00Z",
+    "publishedAt": "2026-11-18T09:00:00Z"
+  },
+  {
+    "id": "a8b37e42-91d6-4f3a-b205-7c19e0d84f62",
+    "title": "HonoとTypeScriptでAPIを作る",
+    "url": "/articles/002",
+    "tags": [
+      "Hono",
+      "TypeScript",
+      "API"
+    ],
+    "body": "Honoは軽量で高速なWebフレームワークです。TypeScriptとの相性がよく、Node.jsやAWS Lambdaなど複数の実行環境に対応しています。",
+    "updatedAt": "2026-11-21T14:30:00Z",
+    "publishedAt": "2026-11-19T12:00:00Z"
+  },
+  {
+    "id": "f7e29a13-5d84-4c60-9b72-3e18a6d45c90",
+    "title": "DynamoDBの基本操作",
+    "url": "/articles/003",
+    "tags": [
+      "AWS",
+      "DynamoDB",
+      "NoSQL"
+    ],
+    "body": "DynamoDBはAWSのフルマネージドNoSQLデータベースです。PutItemでデータを保存し、GetItemやQueryを使って必要なデータを取得できます。",
+    "updatedAt": "2026-11-22T08:15:00Z",
+    "publishedAt": "2026-11-20T15:00:00Z"
+  },
+  {
+    "id": "bf89bda9-b1a8-41b6-8727-c4608c3a0163",
+    "title": "新しい記事",
+    "url": "/articles/004",
+    "tags": [
+      "Hono",
+      "Zod"
+    ],
+    "body": "HonoでPOST APIを作成しました。",
+    "updatedAt": "2026-11-22T05:25:07.339Z",
+    "publishedAt": "2026-11-22T05:25:07.339Z"
+  }
+]

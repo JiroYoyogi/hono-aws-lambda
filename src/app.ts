@@ -1,28 +1,48 @@
 import { Hono } from 'hono'
-import { z } from 'zod'
 import { zValidator } from '@hono/zod-validator'
+import { z } from 'zod'
+
+import {
+  getArticles,
+  getArticle,
+  createArticle,
+} from './handlers/articles.js'
+
+import { createArticleSchema } from './schemas/article.js'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
+// 記事一覧取得
+app.get('/articles', async (c) => {
+  const articles = await getArticles()
+  return c.json(articles)
 })
 
-const userSchema = z.object({
-  name: z.string().min(1),
-  age: z.number().int().min(0),
-})
+// 記事1件取得
+app.get(
+  '/articles/:id',
+  zValidator('param', z.object({ id: z.uuid() })),
+  async (c) => {
+    const { id } = c.req.valid('param')
+    const article = await getArticle(id)
 
+    if (!article) {
+      return c.json({ message: 'Not found' }, 404)
+    }
+
+    return c.json(article)
+  }
+)
+
+// 記事登録
 app.post(
-  '/users',
-  zValidator('json', userSchema),
-  (c) => {
-    const user = c.req.valid('json')
+  '/articles',
+  zValidator('json', createArticleSchema),
+  async (c) => {
+    const input = c.req.valid('json')
+    const article = await createArticle(input)
 
-    return c.json({
-      message: 'User created',
-      user,
-    }, 201)
+    return c.json(article, 201)
   }
 )
 

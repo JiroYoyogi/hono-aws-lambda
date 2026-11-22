@@ -65,5 +65,3 @@ import { add } from "./utils/math.js";
 }
 ```
 
-
-
