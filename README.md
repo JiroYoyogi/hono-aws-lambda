@@ -6,7 +6,7 @@
 - Nodeプロジェクト（⭐️今回はコレ）
 - Viteプロジェクト
 
-### インストール
+## インストール
 
 ```
 npm init -y
@@ -23,9 +23,9 @@ npx tsc --init
 npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb @hono/aws-lambda
 ```
 
-### 設定
+## 設定
 
-#### package.json
+### package.json
 
 
 - --noEmit ... JSファイルを生成しない。typecheckでは型チェックをしたいだけで生成不要
@@ -46,7 +46,7 @@ npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb @hono/aws-lambda
 
 ※ `Lambda` でデプロイする前提
 
-#### tsconfig.json
+### tsconfig.json
 
 ```json
 {
@@ -77,7 +77,7 @@ import { add } from "./utils/math.js";
 
 [参考：【TypeScript】tsconfig.json の moduleResolution の役割を理解する](https://qiita.com/Yasushi-Mo/items/8e8058ffd0b151eabe1d)
 
-#### DynamoDB 作成
+### DynamoDB 作成
 
 - テーブル名
 
@@ -99,13 +99,13 @@ import { add } from "./utils/math.js";
 }
 ```
 
-#### .env 作成
+### .env 作成
 
 ```
 DYNAMODB_TABLE_NAME=hono-sample
 ```
 
-#### データの読み先の設定（テスト用のJSON？ DynamoDB？）
+### データの読み先の設定（テスト用のJSON？ DynamoDB？）
 
 `src/app.ts` の下記で切り替える
 
