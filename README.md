@@ -17,9 +17,16 @@ npm install -D typescript tsx @types/node
 npx tsc --init
 ```
 
+更に `aws` 関連
+
+```
+npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb @hono/aws-lambda
+```
+
 ### 設定
 
 #### package.json
+
 
 - --noEmit ... JSファイルを生成しない。typecheckでは型チェックをしたいだけで生成不要
 
@@ -27,13 +34,17 @@ npx tsc --init
 {
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=.env src/index.ts",
     "typecheck": "tsc --noEmit",
-    "build": "tsc --noEmit false --outDir dist",
-    "start": "node dist/index.js"
+    "build": "npm run build:lambda",
+    "build:lambda": "node --env-file=.env scripts/build-lambda.mjs",
+    "zip:lambda": "cd dist && rm -f index.zip && zip index.zip index.cjs",
+    "package:lambda": "npm run build:lambda && npm run zip:lambda"
   }
 }
 ```
+
+※ `Lambda` でデプロイする前提
 
 #### tsconfig.json
 
