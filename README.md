@@ -48,19 +48,6 @@ npm install @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb @hono/aws-lambda
 
 #### tsconfig.json
 
-- moduleResolution: "NodeNext"
-
-```js
-// ❌ エラー: 拡張子がない
-import { add } from "./utils/math";
-
-// ✅ OK: 拡張子を明示
-import { add } from "./utils/math.js";
-```
-
-[参考：【TypeScript】tsconfig.json の moduleResolution の役割を理解する](https://qiita.com/Yasushi-Mo/items/8e8058ffd0b151eabe1d)
-
-
 ```json
 {
   "compilerOptions": {
@@ -75,6 +62,18 @@ import { add } from "./utils/math.js";
   "include": ["src"]
 }
 ```
+
+- moduleResolution: "NodeNext"
+
+```js
+// ❌ エラー: 拡張子がない
+import { add } from "./utils/math";
+
+// ✅ OK: 拡張子を明示
+import { add } from "./utils/math.js";
+```
+
+[参考：【TypeScript】tsconfig.json の moduleResolution の役割を理解する](https://qiita.com/Yasushi-Mo/items/8e8058ffd0b151eabe1d)
 
 #### DynamoDB 作成
 
