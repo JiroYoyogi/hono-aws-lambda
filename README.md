@@ -101,10 +101,6 @@ import { add } from "./utils/math.js";
 
 #### .env 作成
 
-- .env
-
-作成したテーブル名を記載
-
 ```
 DYNAMODB_TABLE_NAME=hono-sample
 ```
